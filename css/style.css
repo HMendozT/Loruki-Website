@@ -2,6 +2,9 @@
 
 :root {
   --primaryColor: #047aed;
+  --secondaryColor: #1c3fa8;
+  --darkColor: #002240;
+  --lightColor: #f4f4f4f4;
 }
 
 html {
@@ -140,6 +143,107 @@ img {
   padding-top: 100px;
 }
 
+.stats-heading {
+  max-width: 500px;
+  margin: auto;
+}
+
+.stats .grid h3 {
+  font-size: 35px;
+}
+
+.stats .grid p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* CLI */
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+/* Cloud */
+.cloud .grid {
+  grid-template-columns: 4fr 3fr;
+}
+
+/* Lenguages */
+.lenguages .flex {
+  flex-wrap: wrap;
+}
+
+.lenguages .card {
+  text-align: center;
+  margin: 18px 10px 40px;
+  transition: transform 0.2s ease-in;
+}
+
+.lenguages .card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.lenguages .card:hover {
+  transform: translateY(-15px);
+}
+
+/* Footer */
+.footer .social {
+  justify-content: space-between;
+}
+
 /* Queries */
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .showcase-form {
+    justify-self: center;
+    margin: auto;
+  }
+
+  .cli .grid > *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .container {
+    overflow: hidden;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
